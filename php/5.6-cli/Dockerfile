@@ -4,10 +4,13 @@ MAINTAINER Stan Angeloff <stanimir@angeloff.name>
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        git-core
+        git-core \
+        zlib1g-dev
 
+# See https://github.com/php/php-src/tree/master/ext
 RUN docker-php-ext-install \
-        mbstring
+        mbstring \
+        zip
 
 RUN echo 'memory_limit=-1' > "$PHP_INI_DIR"/conf.d/memory_limit.ini && \
     echo 'date.timezone=${PHP_TIMEZONE:-UTC}' > "$PHP_INI_DIR"/conf.d/date_timezone.ini
