@@ -36,3 +36,11 @@ RUN curl -sL https://deb.nodesource.com/setup_4.x | bash && \
     apt-get install -y nodejs
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Clean up...
+RUN apt-get purge -y -qq \
+        libgmp-dev libgmp3-dev \
+        libicu-dev \
+        libxml2-dev \
+        zlib1g-dev && \
+    apt-get clean
