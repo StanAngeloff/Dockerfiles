@@ -7,6 +7,7 @@ RUN apt-get update && \
         git-core \
         libgmp-dev libgmp3-dev \
         libicu-dev \
+        libxml2-dev \
         zlib1g-dev
 
 # Clean up...
@@ -17,7 +18,11 @@ RUN docker-php-ext-install \
         gmp \
         intl \
         mbstring \
+        soap \
         zip
+
+RUN /bin/echo -e 'YES\nNO\n' | pecl install apcu-4.0.7 && \
+    echo 'extension=apcu.so' >> /usr/local/etc/php/conf.d/pecl.ini
 
 RUN echo 'memory_limit=-1' > "$PHP_INI_DIR"/conf.d/memory_limit.ini && \
     echo 'date.timezone=${PHP_TIMEZONE:-UTC}' > "$PHP_INI_DIR"/conf.d/date_timezone.ini
