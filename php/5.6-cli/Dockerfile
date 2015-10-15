@@ -5,10 +5,17 @@ MAINTAINER Stan Angeloff <stanimir@angeloff.name>
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         git-core \
+        libgmp-dev libgmp3-dev \
+        libicu-dev \
         zlib1g-dev
+
+# Clean up...
+RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h
 
 # See https://github.com/php/php-src/tree/master/ext
 RUN docker-php-ext-install \
+        gmp \
+        intl \
         mbstring \
         zip
 
