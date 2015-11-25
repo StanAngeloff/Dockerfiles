@@ -15,7 +15,6 @@ RUN apt-get install -y -qq \
         php7.0-dev \
         php-curl \
         php-intl \
-        php-json \
         php-opcache \
         php-sqlite3
 
