@@ -16,6 +16,7 @@ RUN apt-get install -y -qq \
         php7.0-gmp \
         php7.0-intl \
         php7.0-json \
+        php7.0-mcrypt \
         php7.0-mysql \
         php7.0-sqlite
 
