@@ -16,6 +16,7 @@ RUN apt-get install -y -qq \
         php5-gmp \
         php5-intl \
         php5-json \
+        php5-mysql \
         php5-sqlite
 
 ENV PHP_CONF_DIR /etc/php5/cli/conf.d
