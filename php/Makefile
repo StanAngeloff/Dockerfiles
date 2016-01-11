@@ -10,7 +10,7 @@ $(foreach version,$(VERSIONS), $(version)-cli/Dockerfile.m4):
 	@m4 -I $(TOP)common $@ > $(subst .m4,,$@)
 
 $(foreach version,$(VERSIONS), $(version)-cli/Dockerfile):
-	@docker build -t stanangeloff/php:$(shell basename $(shell dirname $@)) $(shell dirname $@)
+	@docker build --rm --no-cache -t stanangeloff/php:$(shell basename $(shell dirname $@)) $(shell dirname $@)
 
 .PHONY: $(VERSIONS)
 
