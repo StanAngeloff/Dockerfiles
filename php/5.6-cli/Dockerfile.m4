@@ -6,6 +6,7 @@ RUN apt-get install -y -qq \
         php5.6-common \
         php5.6-cli \
         php5.6-dev \
+        php5.6-bcmath \
         php5.6-curl \
         php5.6-gmp \
         php5.6-intl \
