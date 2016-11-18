@@ -17,6 +17,7 @@ RUN apt-get install -y -qq \
         php7.0-readline \
         php7.0-sqlite \
         php7.0-xml \
+        php7.0-zip \
         php-pear
 
 ENV PHP_CONF_DIR /etc/php/7.0/cli/conf.d

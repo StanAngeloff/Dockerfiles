@@ -16,6 +16,7 @@ RUN apt-get install -y -qq \
         php5.5-readline \
         php5.5-sqlite \
         php5.5-xml \
+        php5.5-zip \
         php-pear && \
     dnl APCu is a virtual package which depends on packages which pull php7.0-cli.
     dnl When --no-install-recommends is used this behaviour is suppressed.

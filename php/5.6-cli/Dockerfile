@@ -24,6 +24,7 @@ RUN apt-get install -y -qq \
         php5.6-readline \
         php5.6-sqlite \
         php5.6-xml \
+        php5.6-zip \
         php-pear && \
                     apt-get install -y -qq --no-install-recommends php5.6-apcu
 
