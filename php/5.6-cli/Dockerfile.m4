@@ -2,25 +2,28 @@ FROM ubuntu:14.04
 
 include(`prerequisites.m4')
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
-    echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu $( lsb_release -cs ) main" > /etc/apt/sources.list.d/ondrej-php5-5.6.list
-
-RUN apt-get update
-
 RUN apt-get install -y -qq \
-        php5-cli \
-        php5-dev \
-        php-pear \
-        php5-apcu \
-        php5-curl \
-        php5-gmp \
-        php5-intl \
-        php5-json \
-        php5-mcrypt \
-        php5-mysql \
-        php5-sqlite
+        php5.6-common \
+        php5.6-cli \
+        php5.6-dev \
+        php5.6-curl \
+        php5.6-gmp \
+        php5.6-intl \
+        php5.6-json \
+        php5.6-mbstring \
+        php5.6-mcrypt \
+        php5.6-mysql \
+        php5.6-readline \
+        php5.6-sqlite \
+        php5.6-xml \
+        php-pear && \
+    dnl APCu is a virtual package which depends on packages which pull php7.0-cli.
+    dnl When --no-install-recommends is used this behaviour is suppressed.
+    dnl
+    dnl See https://github.com/oerdnj/deb.sury.org/wiki/PPA-migration-to-ppa:ondrej-php#why-is-php70-cli-always-installed
+    apt-get install -y -qq --no-install-recommends php5.6-apcu
 
-ENV PHP_CONF_DIR /etc/php5/cli/conf.d
+ENV PHP_CONF_DIR /etc/php/5.6/cli/conf.d
 
 include(`configure.m4')
 
