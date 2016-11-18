@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Stan Angeloff <stanimir@angeloff.name>
 
-ENV COMPOSER_VERSION 1.0.0-alpha11
+ENV COMPOSER_VERSION 1.2.2
 
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
