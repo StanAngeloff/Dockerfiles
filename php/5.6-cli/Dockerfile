@@ -23,6 +23,7 @@ RUN apt-get install -y -qq \
         php5.6-mcrypt \
         php5.6-mysql \
         php5.6-readline \
+        php5.6-soap \
         php5.6-sqlite \
         php5.6-xml \
         php5.6-zip \

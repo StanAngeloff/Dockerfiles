@@ -24,6 +24,7 @@ RUN apt-get install -y -qq \
         php7.0-mcrypt \
         php7.0-mysql \
         php7.0-readline \
+        php7.0-soap \
         php7.0-sqlite \
         php7.0-xml \
         php7.0-zip \

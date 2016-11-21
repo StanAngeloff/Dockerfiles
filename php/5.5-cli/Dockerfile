@@ -23,6 +23,7 @@ RUN apt-get install -y -qq \
         php5.5-mcrypt \
         php5.5-mysql \
         php5.5-readline \
+        php5.5-soap \
         php5.5-sqlite \
         php5.5-xml \
         php5.5-zip \
