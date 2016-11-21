@@ -1,6 +1,7 @@
 RUN apt-get install -y -qq --no-install-recommends \
         curl \
-        git-core
+        git-core \
+        lsof
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --version=${COMPOSER_VERSION} --filename=composer
 

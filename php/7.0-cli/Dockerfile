@@ -37,7 +37,8 @@ RUN echo "memory_limit=-1" >> "$PHP_CONF_DIR"/defaults.ini && \
 
 RUN apt-get install -y -qq --no-install-recommends \
         curl \
-        git-core
+        git-core \
+        lsof
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --version=${COMPOSER_VERSION} --filename=composer
 
