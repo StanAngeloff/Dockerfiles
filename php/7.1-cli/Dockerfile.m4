@@ -2,6 +2,8 @@ FROM ubuntu:14.04
 
 include(`prerequisites.m4')
 
+ENV NODE_VERSION 6.x
+
 RUN apt-get install -y -qq \
         php7.1-common \
         php7.1-cli \

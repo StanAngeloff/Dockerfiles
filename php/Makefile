@@ -1,4 +1,4 @@
-VERSIONS := 5.5 5.6 7.0 7.1-rc
+VERSIONS := 5.5 5.6 7.0 7.1
 
 .PHONY: build
 

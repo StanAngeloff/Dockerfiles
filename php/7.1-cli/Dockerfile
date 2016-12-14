@@ -10,6 +10,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C && \
 RUN apt-get update -q
 
 
+ENV NODE_VERSION 6.x
+
 RUN apt-get install -y -qq \
         php7.1-common \
         php7.1-cli \
@@ -43,7 +45,7 @@ RUN apt-get install -y -qq --no-install-recommends \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --version=${COMPOSER_VERSION} --filename=composer
 
-RUN curl -sL https://deb.nodesource.com/setup_4.x | bash && \
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION-4.x} | bash && \
     apt-get install -y nodejs
 
 
